@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  --color-white: #FFFFFF;
+  --color-bg: #FAFAFA; /* Softer background */
+  --color-surface: #FFFFFF;
+  --color-border: #E4E4E7; /* Zinc border */
+  --color-border-hover: #D4D4D8;
+  --color-border-active: #09090b;
+
+  --color-text-primary: #09090b;
+  --color-text-secondary: #71717a;
+  --color-text-muted: #A1A1AA;
+
+  --color-black: #09090b;
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-600: #52525b;
+  --color-zinc-500: #71717a;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-50: #fafafa;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em; /* Tighter typography */
+}
+
+/* Premium card effect without heavy shadows */
+.premium-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.premium-card:hover {
+  border-color: var(--color-border-hover);
+}
+
+/* Status indicators - more subtle */
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-border-applied { border-left: 2px solid #e4e4e7; }
+.status-border-phone-screen { border-left: 2px solid #a1a1aa; }
+.status-border-interview { border-left: 2px solid #52525b; }
+.status-border-offer { border-left: 2px solid #18181b; }
+.status-border-rejected { border-left: 2px solid #f4f4f5; }
+
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.2s ease-out;
+}
+
+/* Focus */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #374151;
+}
+
+/* Status border-left indicators */
+.status-border-applied { border-left: 3px solid #9CA3AF; }
+.status-border-phone-screen { border-left: 3px solid #6B7280; }
+.status-border-interview { border-left: 3px solid #374151; }
+.status-border-offer { border-left: 3px solid #111827; }
+.status-border-rejected { border-left: 3px solid #D1D5DB; }
+
+/* Column top borders */
+.column-applied { border-top: 2px solid #9CA3AF; }
+.column-phone-screen { border-top: 2px solid #6B7280; }
+.column-interview { border-top: 2px solid #374151; }
+.column-offer { border-top: 2px solid #111827; }
+.column-rejected { border-top: 2px solid #D1D5DB; }
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
