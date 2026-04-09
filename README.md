@@ -45,8 +45,8 @@ Data-driven search strategy.
 
 ## Roadmap (Future Features)
 
-- [ ] **Unified Profile**: Upload a base resume for the AI to perform direct "Resume-to-Job" gap analysis.
-- [ ] **Email Integration**: Auto-link follow-up reminders based on application dates.
+-  **Unified Profile**: Upload a base resume for the AI to perform direct "Resume-to-Job" gap analysis.
+-  **Email Integration**: Auto-link follow-up reminders based on application dates.
 
 ---
 
