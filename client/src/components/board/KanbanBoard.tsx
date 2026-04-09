@@ -48,7 +48,7 @@ const KanbanBoard: React.FC = () => {
     if (app) setActiveApplication(app);
   };
 
-  const handleDragOver = (_event: DragOverEvent) => {
+  const handleDragOver = () => {
     // Optional: add visual preview of drop target
   };
 
