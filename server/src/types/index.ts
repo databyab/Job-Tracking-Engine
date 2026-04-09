@@ -2,6 +2,9 @@ import { Request } from 'express';
 
 export interface AuthRequest extends Request {
   userId?: string;
+  body: any;
+  params: any;
+  headers: any;
 }
 
 export interface ParsedJobData {

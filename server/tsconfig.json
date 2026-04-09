@@ -12,7 +12,9 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "express", "cors", "jsonwebtoken"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
