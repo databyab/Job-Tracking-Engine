@@ -9,7 +9,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onAddClick }) => {
   const { user, logout } = useAuth();
-  const { data: applications = [] } = useApplications();
 
   return (
     <header className="border-b border-zinc-200 bg-white/80 backdrop-blur-md sticky top-0 z-30">

@@ -10,9 +10,8 @@ import {
   DragStartEvent,
   DragOverEvent,
   DragEndEvent,
-  DefaultAnnouncements,
 } from '@dnd-kit/core';
-import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { useApplications, useUpdateApplication } from '../../hooks/useApplications';
 import type { Application, ApplicationStatus } from '../../types';
 import { APPLICATION_STATUSES } from '../../types';
@@ -27,7 +26,6 @@ const KanbanBoard: React.FC = () => {
   const { data: applications = [], isLoading, error } = useApplications();
   const updateMutation = useUpdateApplication();
 
-  const [activeId, setActiveId] = useState<string | null>(null);
   const [activeApplication, setActiveApplication] = useState<Application | null>(null);
   const [selectedApplication, setSelectedApplication] = useState<Application | null>(null);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -46,18 +44,16 @@ const KanbanBoard: React.FC = () => {
 
   const handleDragStart = (event: DragStartEvent) => {
     const { active } = event;
-    setActiveId(active.id as string);
     const app = applications.find((a) => a._id === active.id);
     if (app) setActiveApplication(app);
   };
 
-  const handleDragOver = (event: DragOverEvent) => {
+  const handleDragOver = (_event: DragOverEvent) => {
     // Optional: add visual preview of drop target
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
-    setActiveId(null);
     setActiveApplication(null);
 
     if (!over) return;

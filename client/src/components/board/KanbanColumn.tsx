@@ -9,14 +9,6 @@ interface KanbanColumnProps {
   onCardClick: (application: Application) => void;
 }
 
-const columnStyleMap: Record<string, string> = {
-  'Applied': 'column-applied',
-  'Phone Screen': 'column-phone-screen',
-  'Interview': 'column-interview',
-  'Offer': 'column-offer',
-  'Rejected': 'column-rejected',
-};
-
 const KanbanColumn: React.FC<KanbanColumnProps> = ({ status, applications, onCardClick }) => {
   const { isOver, setNodeRef } = useDroppable({
     id: status,
