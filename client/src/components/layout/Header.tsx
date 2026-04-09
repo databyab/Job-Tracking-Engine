@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { useApplications } from '../../hooks/useApplications';
 
 interface HeaderProps {
   onAddClick?: () => void;
