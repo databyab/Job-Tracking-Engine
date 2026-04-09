@@ -2,7 +2,6 @@ import axios from 'axios';
 import type { Application, AIParseResponse, AuthResponse, CreateApplicationData } from '../types';
 
 const API_URL = import.meta.env.VITE_API_URL || '/api';
-console.log('🔗 Current API URL:', API_URL);
 
 const api = axios.create({
   baseURL: API_URL,
