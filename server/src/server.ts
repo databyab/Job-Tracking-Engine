@@ -13,6 +13,17 @@ import applicationRoutes from './routes/applicationRoutes';
 import aiRoutes from './routes/aiRoutes';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 
+// Verify critical environment variables at startup
+console.log('🔍 Verifying Environment Configuration...');
+const requiredEnv = ['MONGO_URI', 'JWT_SECRET', 'NODE_ENV'];
+requiredEnv.forEach(env => {
+  if (process.env[env]) {
+    console.log(`✅ ${env} is defined`);
+  } else {
+    console.error(`❌ ${env} is MISSING!`);
+  }
+});
+
 const app = express();
 
 // Security Middleware
@@ -72,10 +83,11 @@ const startServer = async (): Promise<void> => {
   try {
     await connectDB();
     
-    app.listen(PORT, () => {
-      console.log(`\n🚀 Server running on port ${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`\n🚀 Server is LIVE!`);
+      console.log(`📡 Listening on: 0.0.0.0:${PORT}`);
       console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-      console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}\n`);
+      console.log(`🌍 Mode: ${process.env.NODE_ENV || 'development'}\n`);
     });
   } catch (error) {
     console.error('Failed to start server:', error);
