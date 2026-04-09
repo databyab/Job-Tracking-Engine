@@ -1,4 +1,4 @@
-# JobTracker — Intelligent AI Career Dashboard
+# JobTracker - Intelligent AI Career Dashboard
 
 JobTracker is a premium, minimal MERN-stack application designed to streamline the job search process using AI-powered automation and high-fidelity analytics.
 
